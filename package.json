@@ -2,6 +2,7 @@
 	"name": "shopbot",
 	"version": "1.0.0",
 	"main": "app.js",
+	"author": "Josh Simard",
 	"scripts": {
 		"eslint": "./node_modules/.bin/eslint index.js",
 		"fix-lint": "./node_modules/.bin/eslint index.js --fix"
@@ -9,7 +10,10 @@
 	"dependencies": {
 		"async": "3.1.0",
 		"config": "3.2.2",
-		"uuid": "3.3.2"
+		"discord.io": "^2.5.3",
+		"discord.js": "^11.5.1",
+		"uuid": "3.3.2",
+		"winston": "^3.2.1"
 	},
 	"devDependencies": {
 		"clone": "2.1.2",
