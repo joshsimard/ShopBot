@@ -1,0 +1,21 @@
+{
+	"name": "shopbot",
+	"version": "1.0.0",
+	"main": "app.js",
+	"scripts": {
+		"eslint": "./node_modules/.bin/eslint index.js",
+		"fix-lint": "./node_modules/.bin/eslint index.js --fix"
+	},
+	"dependencies": {
+		"async": "3.1.0",
+		"config": "3.2.2",
+		"uuid": "3.3.2"
+	},
+	"devDependencies": {
+		"clone": "2.1.2",
+		"eslint": "6.1.0",
+		"merge": "1.2.1",
+		"mocha": "6.2.0",
+		"nyc": "14.1.1"
+	}
+}
