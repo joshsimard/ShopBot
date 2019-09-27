@@ -13,17 +13,19 @@ const _getTraitString = function ( traits ) {
 	return result;
 };
 
+// TODO: maybe generate each line to be a max of 60 characters ( seems to be the max to fit )
 const _formatItem = function ( item ) {
 
 	return `
 	\`\`\`bash
-	"${item.name.toUpperCase( )}" (Item ${item.level})
-	--------------------------------------
-	${_getTraitString( item.traits )}
-
-	Price: "${item.price}"
-	Description: "${item.description}"
-	--------------------------------------
+	 -----------------------------------------------------------
+	| "${item.name.toUpperCase( )}" (Item ${item.level})        |
+	 -----------------------------------------------------------
+	| ${_getTraitString( item.traits )}                         |
+	|                                                           |
+	| Price: "${item.price}"                                    |
+	| Description: "${item.description}"                        |
+	 -----------------------------------------------------------
 	\`\`\`
 	`; 
 };
