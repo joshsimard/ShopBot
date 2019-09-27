@@ -16,6 +16,8 @@ const _getTraitString = function ( traits ) {
 // TODO: maybe generate each line to be a max of 60 characters ( seems to be the max to fit )
 const _formatItem = function ( item ) {
 
+	if ( !item ) { return "Can't find that item."; }
+
 	return `
 	\`\`\`bash
 	 -----------------------------------------------------------
@@ -30,6 +32,18 @@ const _formatItem = function ( item ) {
 	`; 
 };
 
+const _findItem = function ( name ) {
+
+	let result = null;
+
+	Object.keys( items ).forEach( ( key ) => {
+		let item = items[key];
+		if ( item.name.toLowerCase() === name.toLowerCase() ) { result = item; }
+	} );
+
+	return result;
+};
+
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 });
@@ -41,6 +55,10 @@ client.on('message', msg => {
 
 		args = args.splice(1);
 		switch( cmd ) {
+			case "item":
+				let name = args.join( " " );
+				msg.reply( _formatItem( _findItem( name ) ) );
+				break;
 			case "random":
 				let index = Math.floor ( Math.random() * Object.keys( items ).length );
 				msg.reply( _formatItem( items[index]) );
@@ -48,7 +66,8 @@ client.on('message', msg => {
 			case "help":
 				msg.reply(`
 				Current commands include:
-					!random: displays a random item.
+					!random            : displays a random item.
+					!item name of item : displays an item of the given name, or a message if not found.
 				`);
 				break;
 			default:
