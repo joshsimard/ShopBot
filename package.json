@@ -18,7 +18,7 @@
 	"devDependencies": {
 		"clone": "2.1.2",
 		"eslint": "6.1.0",
-		"merge": "1.2.1",
+		"merge": "2.1.1",
 		"mocha": "6.2.0",
 		"nyc": "14.1.1"
 	}
